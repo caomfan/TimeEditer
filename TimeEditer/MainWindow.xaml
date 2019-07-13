@@ -1,0 +1,24 @@
+﻿<Window x:Class="TimeEditerDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeEditerDemo"
+        DataContext="{Binding Source={x:Static local:MainVm.Instance}}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <local:TimeEditer Hour="{Binding Hour,Mode=TwoWay}" Minute="{Binding Minute,Mode=TwoWay}" Second="{Binding Seccond,Mode=TwoWay}" Width="90" Height="30" HorizontalAlignment="Left"/>
+            <TextBlock Margin="0 10 0 0">
+                <Run Text="当前时间："/>
+                <Run Text="{Binding Hour}"/>
+                <Run Text="时"/>
+                <Run Text="{Binding Minute}"/>
+                <Run Text="分"/>
+                <Run Text="{Binding Seccond}"/>
+                <Run Text="秒"/>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
